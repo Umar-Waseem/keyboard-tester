@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keyboard Tester</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .keyboard {
+            gap: 5px;
+            column-gap: 10px;
+        }
+
+        .key {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.15s ease-in-out;
+            font-family: sans-serif;
+        }
+
+        .key.clicked {
+            background-color: green;
+            color: white;
+        }
+
+        /* hover and active styles */
+        .key:hover {
+            background-color: lightgray;
+        }
+
+        .key:active {
+            background-color: darkgray;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script defer>
+        document.addEventListener('keydown', function (event) {
+            const keyElement = document.getElementById(event.key.toLowerCase());
+            if (keyElement) {
+                keyElement.classList.add('clicked');
+            }
+        });
+
+        document.addEventListener('click', function (event) {
+            const keyElement = document.getElementById(event.target.id);
+            if (keyElement) {
+                console.log(keyElement);
+                keyElement.classList.remove('clicked');
+            }
+        });
+
+    </script>
+
+    <div class="center col">
+        <h1>Keyboard Tester</h1>
+        <h2>Test your mostly used keyboard keys</h2>
+        <div class="keyboard center col">
+            <div class="row">
+                <div id="1" class="key" aria-label="1" tabindex="1">1</div>
+                <div id="2" class="key" aria-label="2" tabindex="2">2</div>
+                <div id="3" class="key" aria-label="3" tabindex="3">3</div>
+                <div id="4" class="key" aria-label="4" tabindex="4">4</div>
+                <div id="5" class="key" aria-label="5" tabindex="5">5</div>
+                <div id="6" class="key" aria-label="6" tabindex="6">6</div>
+                <div id="7" class="key" aria-label="7" tabindex="7">7</div>
+                <div id="8" class="key" aria-label="8" tabindex="8">8</div>
+                <div id="9" class="key" aria-label="9" tabindex="9">9</div>
+                <div id="0" class="key" aria-label="0" tabindex="10">0</div>
+            </div>
+            <div class="row">
+                <div id="q" class="key" aria-label="Q" tabindex="11">Q</div>
+                <div id="w" class="key" aria-label="W" tabindex="12">W</div>
+                <div id="e" class="key" aria-label="E" tabindex="13">E</div>
+                <div id="r" class="key" aria-label="R" tabindex="14">R</div>
+                <div id="t" class="key" aria-label="T" tabindex="15">T</div>
+                <div id="y" class="key" aria-label="Y" tabindex="16">Y</div>
+                <div id="u" class="key" aria-label="U" tabindex="17">U</div>
+                <div id="i" class="key" aria-label="I" tabindex="18">I</div>
+                <div id="o" class="key" aria-label="O" tabindex="19">O</div>
+                <div id="p" class="key" aria-label="P" tabindex="20">P</div>
+            </div>
+        
+            <div class="row">
+                <div id="a" class="key" aria-label="A" tabindex="21">A</div>
+                <div id="s" class="key" aria-label="S" tabindex="22">S</div>
+                <div id="d" class="key" aria-label="D" tabindex="23">D</div>
+                <div id="f" class="key" aria-label="F" tabindex="24">F</div>
+                <div id="g" class="key" aria-label="G" tabindex="25">G</div>
+                <div id="h" class="key" aria-label="H" tabindex="26">H</div>
+                <div id="j" class="key" aria-label="J" tabindex="27">J</div>
+                <div id="k" class="key" aria-label="K" tabindex="28">K</div>
+                <div id="l" class="key" aria-label="L" tabindex="29">L</div>
+            </div>
+            <div class="row">
+                <div id="z" class="key" aria-label="Z" tabindex="30">Z</div>
+                <div id="x" class="key" aria-label="X" tabindex="31">X</div>
+                <div id="c" class="key" aria-label="C" tabindex="32">C</div>
+                <div id="v" class="key" aria-label="V" tabindex="33">V</div>
+                <div id="b" class="key" aria-label="B" tabindex="34">B</div>
+                <div id="n" class="key" aria-label="N" tabindex="35">N</div>
+                <div id="m" class="key" aria-label="M" tabindex="36">M</div>
+            </div>
+            <div id=" " class="key row" style="width: 70%;">Space</div>
+        
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>
